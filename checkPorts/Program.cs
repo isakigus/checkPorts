@@ -9,15 +9,17 @@
         {
             using (TcpClient tcpClient = new TcpClient())
             {
+                var host = "108.128.24.171";
+                var port = 11211;
+
                 try
                 {
-                    // client = Client(('108.128.24.171', 11211))
-                    tcpClient.Connect("108.128.24.171", 11211);
-                    Console.WriteLine("Port open");
+                    tcpClient.Connect(host, port);
+                    Console.WriteLine($"Port {port } OPEN on {host}");
                 }
                 catch (Exception)
                 {
-                    Console.WriteLine("Port closed");
+                    Console.WriteLine($"Port {port} CLOSED on {host}");
                 }
             }
         }
